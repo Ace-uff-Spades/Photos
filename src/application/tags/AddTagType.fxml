@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="361.0" prefWidth="633.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.tags.AddTagTypeController">
+   <children>
+      <MenuBar prefHeight="23.0" prefWidth="580.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutY="29.0" prefHeight="335.0" prefWidth="633.0">
+         <children>
+            <ListView fx:id="currentTagTypes" layoutX="35.0" layoutY="74.0" prefHeight="181.0" prefWidth="239.0" />
+            <Text layoutX="192.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Configure Tag Types">
+               <font>
+                  <Font name="Arial Bold" size="25.0" />
+               </font>
+            </Text>
+            <RadioButton fx:id="limitRadioButton" layoutX="344.0" layoutY="120.0" mnemonicParsing="false" text="One">
+               <toggleGroup>
+                  <ToggleGroup fx:id="groupOne" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton layoutX="461.0" layoutY="120.0" mnemonicParsing="false" text="Unlimited" toggleGroup="$groupOne" />
+            <Text layoutX="380.0" layoutY="105.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Tag Limit per Photo" />
+            <TextField fx:id="tagTypeTextField" layoutX="366.0" layoutY="152.0" promptText="Enter tag name..." />
+            <Button fx:id="addButton" layoutX="387.0" layoutY="195.0" mnemonicParsing="false" onAction="#addTag" text="Add Tag Type">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <InnerShadow color="#33ba3e" />
+               </effect></Button>
+            <Button fx:id="deleteButton" layoutX="94.0" layoutY="268.0" mnemonicParsing="false" onAction="#deleteTag" text="Delete Tag Type">
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <InnerShadow color="#c71515" />
+               </effect></Button>
+            <Text layoutX="105.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Tag Types" />
+            <Button fx:id="returnButton" layoutX="498.0" layoutY="283.0" mnemonicParsing="false" onAction="#returnToPhoto" text="Return to Photo" />
+            <Button fx:id="logoutButton" layoutX="552.0" layoutY="15.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.Album.AlbumScreenController">
+   <children>
+      <MenuBar prefHeight="23.0" prefWidth="580.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Pane layoutY="29.0" prefHeight="400.0" prefWidth="700.0">
+         <children>
+            <Text layoutX="286.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Album List">
+               <font>
+                  <Font name="Arial" size="23.0" />
+               </font>
+            </Text>
+            <Button fx:id="createButton" layoutX="63.0" layoutY="309.0" mnemonicParsing="false" onAction="#addAlbum" prefHeight="39.0" prefWidth="139.0" text="Create Album">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <InnerShadow color="#31bf4b" />
+               </effect></Button>
+            <Button fx:id="searchButton" layoutX="286.0" layoutY="309.0" mnemonicParsing="false" onAction="#search" prefHeight="39.0" prefWidth="139.0" text="Filter Albums">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <InnerShadow color="#0518e2" />
+               </effect></Button>
+            <Button fx:id="deleteButton" layoutX="503.0" layoutY="309.0" mnemonicParsing="false" onAction="#deleteAlbum" prefHeight="39.0" prefWidth="139.0" text="Delete Album">
+               <font>
+                  <Font size="18.0" />
+               </font>
+               <effect>
+                  <InnerShadow color="#dd1818" />
+               </effect></Button>
+            <ScrollPane fx:id="scrollPane" layoutX="52.0" layoutY="73.0" prefHeight="220.0" prefWidth="600.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+              </content>
+            </ScrollPane>
+            <Button fx:id="logoutButton" layoutX="563.0" layoutY="27.0" mnemonicParsing="false" onAction="#logout" text="Logout" />
+            <Label layoutX="33.0" layoutY="6.0" text="*Click a folder to open the album" />
+            <Label layoutX="33.0" layoutY="23.0" text="*Click the folder name to rename&#10;  the album" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
